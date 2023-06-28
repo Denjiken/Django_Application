@@ -1,0 +1,68 @@
+body {
+    font-family: Monaco, Monospace;
+    background-image: url("https://images.pexels.com/photos/3377414/pexels-photo-3377414.jpeg?cs=srgb&dl=pexels-el%C4%ABna-ar%C4%81ja-3377414.jpg&fm=jpg");
+    background-repeat: no-repeat;
+     background-size: 125%;
+     background-position: center;
+    background-color: #3b3a47;
+}
+
+h1 {
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+    color: black;
+}
+
+label {
+    color: white;
+}
+
+.activity-table {
+    background: linear-gradient(to bottom right, #666666, #333333);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.activity-table th,
+.activity-table td {
+    border: 5px grey;
+    padding: 10px;
+    text-align: left;
+    background-color: #808080;
+    color: black;
+}
+
+.update-button {
+    background-color: #4B5320;
+    border-radius: 10px;
+    color: white;
+}
+
+.delete-button {
+    background-color: #8B0000;
+    border-radius: 10px;
+    color: white;
+}
+
+.add-button {
+    background-color: #00008B;
+    border-radius: 10px;
+    color: white;
+}
+
+.logout {
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    float: right;
+}
+
+.logout a {
+    color: white;
+    text-decoration: none;
+}

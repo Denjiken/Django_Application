@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Instructor Information</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'deleteinstinfo.css' %}">
+</head>
+<body>
+    <h2>Delete Instructor Information</h2>
+    <form method="POST" action="">
+        <label for="instructor_id">Instructor ID:</label>
+        <input type="number" name="instructor_id" required><br><br>
+
+        <label for="column">Select Column:</label>
+        <select name="column">
+            <option value="instructor_name">Instructor Name</option>
+            <option value="instructor_address">Instructor Address</option>
+            <option value="instructor_email">Instructor Email</option>
+            <option value="instructor_gender">Instructor Gender</option>
+        </select><br><br>
+
+        <input type="submit" name="delete_instructor" value="Delete Instructor Information">
+    </form><br><br>
+    <a href="../instinfo"><button>Go to Instructor Information</button></a>
+</body>
+</html>

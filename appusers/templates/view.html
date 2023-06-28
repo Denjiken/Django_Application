@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Activities</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'view.css' %}">
+</head>
+<body>
+    <div class="view-activities-container">
+        <h1>View Activities</h1>
+        <div style="text-align: right;">
+            <form action="userlogin.php" method="POST">
+                <button type="submit" style="background-color: red; color: white; border: none; padding: 10px; cursor: pointer;">Logout</button>
+            </form>
+        </div>
+    </div>
+    <table class='activity-table'>
+        <tr><th>Activity No.</th><th>Activity</th><th>Date</th><th>Description</th><th>Instructor</th><th>Category</th></tr>
+    </table>
+</body>
+</html>

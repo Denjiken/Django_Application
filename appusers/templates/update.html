@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Activity</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'update.css' %}">
+</head>
+<body>
+    <h2>Update Activity</h2>
+    <a href="dash.php"><button>Go to Dashboard Page</button></a><br><br>
+    <form method="POST" action="">
+        <label for="activity_id">Activity ID:</label>
+        <input type="number" name="activity_id" required><br><br>
+        <label for="activity">Activity:</label>
+        <input type="text" name="activity_name" value="<?php echo isset($activity_name) ? $activity_name : ''; ?>" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" name="activity_date" value="<?php echo isset($activity_date) ? $activity_date : ''; ?>" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea name="activity_description" required>
+            
+        </textarea><br><br>
+
+        <label for="category_id">Category ID:</label>
+        <select name="category_id">
+        </select><br><br>
+        <input type="submit" name="update_activity" value="Update Activity">
+    </form><br><br>
+</body>
+</html>

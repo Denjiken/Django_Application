@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'usersignup.css' %}">
+</head>
+    <body>
+        <div class="signup-container">
+            <h1>Sign Up</h1>
+            <p>Fill out the form below.</p>
+            <form method="POST">
+                <input type="text" placeholder="Username" id="username" name="username" required>
+                <input type="password" placeholder="Password" id="password" name="password" required>
+                <label>Select user type:</label>
+                <input type="radio" name="user_type" value="student" checked> Student
+                <input type="radio" name="user_type" value="instructor"> Instructor
+                <button type="submit">Sign Up</button><br>
+                <label>Already have an account?</label>
+                <a href="../index" style="color: #D31C32;">Login</a>
+            </form>
+        </div>
+    </body>
+    </html>

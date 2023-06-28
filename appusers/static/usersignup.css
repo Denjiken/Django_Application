@@ -1,0 +1,64 @@
+body {
+    font-family: Monaco, Monospace;
+    background-image: url("https://img.freepik.com/free-photo/liquid-marbling-paint-texture-background-fluid-painting-abstract-texture-intensive-color-mix-wallpaper_1258-82821.jpg?w=2000");
+    background-repeat: no-repeat;
+     background-size: 133%;
+     background-position: center;
+    background-color: #3b3a47;
+}
+
+.signup-container {
+    background-color: grey;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+}
+
+h1, p, label {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+    display: flex;
+}
+
+input[type="text"], input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+button[type="submit"] {
+    background-color: #355E3B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+a {
+    color: #D31C32;
+    text-decoration: none;
+}

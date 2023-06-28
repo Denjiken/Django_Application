@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Activity</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'delete.css' %}">
+</head>
+<body>
+    <h2>Delete Activity</h2>
+    <form method="POST" action="">
+        <label for="activity_id">Activity ID:</label>
+        <input type="number" name="activity_id" required><br><br>
+
+        <input type="submit" name="delete_activity" value="Delete Activity">
+    </form><br><br>
+    <a href="../dash"><button>Go to Dashboard Page</button></a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Management System</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'dash.css' %}">
+</head>
+<body>
+    <div class="activity-management-system-container">
+        <h1>Activity Management System</h1>
+    </div>
+<body>
+    <div style='text-align: right';>
+        <select name="activity_option" onchange="location = this.value;">
+            <option value="">Edit Table</option>
+            <option value="../add">Add New Activity</option>
+            <option value="../update">Update Activity</option>
+            <option value="../delete">Delete Activity</option>
+        </select><br><br>
+    </div>
+        <a href="../instinfo"><button>Go to Instructor Information</button></a>
+        <a href="../update"><button class="update-button">Update Activity</button></a>
+        <a href="../delete"><button class="delete-button">Delete Activity</button></a>
+        <a href="../add"><button class="add-button">Add Activity</button></a>
+        <table class='activity-table'>
+            <tr><th>Activity ID.</th><th>Activity</th><th>Date</th><th>Description</th><th>Instructor</th><th>Category</th></tr>
+        </table>
+            <div class="logout">
+        <a href="../index">Logout</a>
+    </div>
+</body>
+</html>

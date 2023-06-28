@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Please enter your login credentials.</p>
+        <form action="../login" method="POST">
+            <input type="text" placeholder="Username" id="username" name="username" required>
+            <input type="password" placeholder="Password" id="password" name="password" required>
+            <button type="submit">Login</button><br>
+            <label>Don't have an account yet?</label>
+            <a href="../usersignup" style="color: #007BFF;">Sign Up</a>
+        </form>
+    </div>
+</body>
+</html>
