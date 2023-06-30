@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 29, 2023 at 02:16 AM
+-- Generation Time: Jun 29, 2023 at 02:04 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,68 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `activity_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `activities`
---
-
-CREATE TABLE `activities` (
-  `activity_id` int(11) NOT NULL,
-  `activity_name` varchar(100) DEFAULT NULL,
-  `activity_date` date DEFAULT NULL,
-  `activity_description` varchar(255) DEFAULT NULL,
-  `instructor_id` int(11) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `activities`
---
-
-INSERT INTO `activities` (`activity_id`, `activity_name`, `activity_date`, `activity_description`, `instructor_id`, `category_id`) VALUES
-(12, 'anyware', '2023-06-12', 'gawa ka lang basta', 34789260, 12),
-(13, 'anyware', '2023-06-12', 'gawa ka lang basta', 34789261, 13),
-(14, 'anyware', '2023-06-13', 'hdgsvhfvhsgfako', 34789262, 14),
-(15, 'activity_management_system', '2023-06-11', 'create a web application in php', 34789263, 15),
-(16, 'updates activity', '2023-06-17', 'asjgdahgsfdghafdhjkasdjgfsdhfjgfljnbnd \r\nsgsgisdhja\r\nsgfusgwhggfsf\r\nshfsgf', 34789264, 16),
-(17, 'python createddd', '2023-06-17', 'gawa ka lang basta', 34789265, 17);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `activity_categories`
---
-
-CREATE TABLE `activity_categories` (
-  `category_id` int(11) NOT NULL,
-  `study_area` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `activity_categories`
---
-
-INSERT INTO `activity_categories` (`category_id`, `study_area`) VALUES
-(1, 'computer science'),
-(2, 'information technology'),
-(3, 'information technology'),
-(4, 'environmental science'),
-(5, 'Computer Science'),
-(6, 'Computer Science'),
-(7, 'Computer Science'),
-(8, 'environmental science'),
-(9, 'environmental science'),
-(10, 'Computer Science'),
-(11, 'environmental science'),
-(12, 'environmental science'),
-(13, 'environmental science'),
-(14, 'environmental science'),
-(15, 'Information Technology'),
-(16, 'Computer Science'),
-(17, 'environmental science'),
-(18, 'Computer Science');
 
 -- --------------------------------------------------------
 
@@ -166,7 +104,27 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (25, 'Can add user', 7, 'add_user'),
 (26, 'Can change user', 7, 'change_user'),
 (27, 'Can delete user', 7, 'delete_user'),
-(28, 'Can view user', 7, 'view_user');
+(28, 'Can view user', 7, 'view_user'),
+(29, 'Can add category', 8, 'add_category'),
+(30, 'Can change category', 8, 'change_category'),
+(31, 'Can delete category', 8, 'delete_category'),
+(32, 'Can view category', 8, 'view_category'),
+(33, 'Can add instructor', 9, 'add_instructor'),
+(34, 'Can change instructor', 9, 'change_instructor'),
+(35, 'Can delete instructor', 9, 'delete_instructor'),
+(36, 'Can view instructor', 9, 'view_instructor'),
+(37, 'Can add activities', 10, 'add_activities'),
+(38, 'Can change activities', 10, 'change_activities'),
+(39, 'Can delete activities', 10, 'delete_activities'),
+(40, 'Can view activities', 10, 'view_activities'),
+(41, 'Can add activites', 11, 'add_activites'),
+(42, 'Can change activites', 11, 'change_activites'),
+(43, 'Can delete activites', 11, 'delete_activites'),
+(44, 'Can view activites', 11, 'view_activites'),
+(45, 'Can add activity_categories', 12, 'add_activity_categories'),
+(46, 'Can change activity_categories', 12, 'change_activity_categories'),
+(47, 'Can delete activity_categories', 12, 'delete_activity_categories'),
+(48, 'Can view activity_categories', 12, 'view_activity_categories');
 
 -- --------------------------------------------------------
 
@@ -254,6 +212,11 @@ CREATE TABLE `django_content_type` (
 
 INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (1, 'admin', 'logentry'),
+(11, 'appusers', 'activites'),
+(10, 'appusers', 'activities'),
+(12, 'appusers', 'activity_categories'),
+(8, 'appusers', 'category'),
+(9, 'appusers', 'instructor'),
 (7, 'appusers', 'user'),
 (3, 'auth', 'group'),
 (2, 'auth', 'permission'),
@@ -297,7 +260,9 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (16, 'auth', '0011_update_proxy_permissions', '2023-06-28 05:00:38.480297'),
 (17, 'auth', '0012_alter_user_first_name_max_length', '2023-06-28 05:00:38.623497'),
 (18, 'sessions', '0001_initial', '2023-06-28 05:00:39.856266'),
-(19, 'appusers', '0001_initial', '2023-06-28 05:40:07.338766');
+(19, 'appusers', '0001_initial', '2023-06-28 05:40:07.338766'),
+(20, 'appusers', '0002_category_instructor_activities', '2023-06-29 10:47:02.013559'),
+(21, 'appusers', '0002_activity_categories_instructor_activites', '2023-06-29 11:11:15.946325');
 
 -- --------------------------------------------------------
 
@@ -317,34 +282,6 @@ CREATE TABLE `django_session` (
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('nv54il45b6hexgn81cvufr0ny5n9d915', '.eJxVjMsOwiAQRf-FtSGAPIpL9_0GMgODVA0kpV0Z_11JutDtOefeFwuwbyXsndawJHZhkp1-GUJ8UB0i3aHeGo-tbuuCfCT8sJ3PLdHzerR_BwV6GWtKevIWjdECHMVMWUnrPGb0ytpklBNe6By_CKJ1IM8GFRmEKaG0mb0_9Uw4cQ:1qENy4:StdhizJn-2jb-cEFJNY-d_rvu3hYcyy2fivfD1qscGo', '2023-07-12 05:43:52.611765');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `instructors`
---
-
-CREATE TABLE `instructors` (
-  `instructor_id` int(11) NOT NULL,
-  `instructor_name` varchar(50) DEFAULT NULL,
-  `instructor_email` varchar(100) DEFAULT NULL,
-  `instructor_address` varchar(255) DEFAULT NULL,
-  `instructor_gender` char(8) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `instructors`
---
-
-INSERT INTO `instructors` (`instructor_id`, `instructor_name`, `instructor_email`, `instructor_address`, `instructor_gender`) VALUES
-(68473, 'pachamba', 'vicentearman7@gmail.com', 'Puerto Princesa City', 'male'),
-(623562, 'IKAW NA YAN', 'hazuki@gmail.com', 'Hazukidimahanapnalugar', 'female'),
-(22225566, 'Hazuki', 'hazuki@gmail.com', 'Hazukidimahanapnalugar', 'male'),
-(34789248, 'kaneki', 'gaye@gmail.com', 'Puerto Princesa City', 'female'),
-(34789256, 'IKAWWWWW', 'vicentearman7@gmail.com', 'Puerto Princesa City', 'male'),
-(34789264, 'kaneki kenzu', 'kanekiken@gmail.com', NULL, NULL),
-(34789265, 'armando', 'hagdghshg@gmail.com', NULL, NULL),
-(34789266, 'kaneki', 'dgfdsftyf@gmail.com', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -458,18 +395,6 @@ INSERT INTO `user` (`id`, `username`, `first_name`, `last_name`, `user_email`, `
 --
 
 --
--- Indexes for table `activities`
---
-ALTER TABLE `activities`
-  ADD PRIMARY KEY (`activity_id`);
-
---
--- Indexes for table `activity_categories`
---
-ALTER TABLE `activity_categories`
-  ADD PRIMARY KEY (`category_id`);
-
---
 -- Indexes for table `appusers_user`
 --
 ALTER TABLE `appusers_user`
@@ -550,12 +475,6 @@ ALTER TABLE `django_session`
   ADD KEY `django_session_expire_date_a5c62663` (`expire_date`);
 
 --
--- Indexes for table `instructors`
---
-ALTER TABLE `instructors`
-  ADD PRIMARY KEY (`instructor_id`);
-
---
 -- Indexes for table `registrations`
 --
 ALTER TABLE `registrations`
@@ -580,18 +499,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `activities`
---
-ALTER TABLE `activities`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `activity_categories`
---
-ALTER TABLE `activity_categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
 -- AUTO_INCREMENT for table `appusers_user`
 --
 ALTER TABLE `appusers_user`
@@ -613,7 +520,7 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT for table `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `auth_user`
@@ -643,19 +550,13 @@ ALTER TABLE `django_admin_log`
 -- AUTO_INCREMENT for table `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT for table `instructors`
---
-ALTER TABLE `instructors`
-  MODIFY `instructor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34789267;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `registrations`

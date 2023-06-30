@@ -24,9 +24,20 @@
         <a href="../add"><button class="add-button">Add Activity</button></a>
         <table class='activity-table'>
             <tr><th>Activity ID.</th><th>Activity</th><th>Date</th><th>Description</th><th>Instructor</th><th>Category</th></tr>
+            {% for instance in st %}
+            <tr>
+                <td>{{ instance.activity_id }}</td>
+                <td>{{ instance.activity_name }}</td>
+                <td>{{ instance.activity_date }}</td>
+                <td>{{ instance.activity_description }}</td>
+                <td>{{ instance.instructor_id_id }}</td>
+                <td>{{ instance.category_id_id }}</td>
+            </tr>
+            {% endfor %}
         </table>
             <div class="logout">
         <a href="../index">Logout</a>
     </div>
+       
 </body>
 </html>

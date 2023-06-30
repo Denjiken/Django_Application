@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import User
+from .models import Activites
 
 def index(request):
     return render(request, 'index.html')
@@ -7,7 +9,8 @@ def add(request):
     return render(request, 'add.html')
 
 def dash(request):
-    return render(request, 'dash.html')
+    st = Activites.objects.all()
+    return render(request, 'dash.html' ,{'st':st})
 
 def delete(request):
     return render(request, 'delete.html')
